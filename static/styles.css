@@ -1,0 +1,363 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.5rem 2rem;
+    z-index: 100;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header.transparent {
+    background: transparent;
+    box-shadow: none;
+}
+
+header.solid {
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Container */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Navigation Section */
+nav {
+    flex: 1; /* Take up available space for centering */
+    display: flex;
+    justify-content: center; /* Center-align navigation links */
+    align-items: center;
+}
+
+.nav-links {
+    display: flex; /* Ensure links are side by side */
+    list-style: none; /* Remove default bullet points */
+    margin: 0;
+    padding: 0;
+    gap: 2rem; /* Add space between links */
+}
+
+/* Navigation Links */
+.nav-link {
+    text-decoration: none;
+    font-size: 1rem; /* Adjust font size */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header.transparent .nav-link {
+    color: white;
+}
+
+header.solid .nav-link {
+    color: black;
+}
+
+/* Header Logo */
+#logo {
+    height: 40px;
+    width: auto;
+    transition: filter 0.3s ease;
+}
+
+header.transparent #logo {
+    content: url('./images/1Long_logo_white.png');
+}
+
+header.solid #logo {
+    content: url('./images/1Long_logo_black.png');
+}
+
+/* Get Started Button */
+.btn-get-started {
+    background-color: #006400;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-get-started:hover {
+    background-color: #004d00;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url('./images/happy_family.png') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+.hero .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+/* Hero CTA Button */
+.hero-cta {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.hero-cta:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* Content Section */
+.content {
+    padding: 2rem;
+    background: #f8f9fa;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #343a40;
+    color: white;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Form Container */
+.form-container {
+    max-width: 600px;
+    margin: 100px auto; /* Add spacing from the top to avoid overlap with the header */
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.form-container h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.form-container p {
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+/* Form Inputs */
+form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+form input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form input:focus {
+    border-color: #006400;
+    outline: none;
+}
+
+/* Submit Button */
+.btn-submit {
+    background-color: #006400;
+    color: white;
+    padding: 0.75rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-submit:hover {
+    background-color: #004d00;
+    transform: scale(1.05);
+}
+
+/* Section Titles */
+form h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* Dynamic Entries */
+.income-entry, .asset-entry {
+    margin-bottom: 1.5rem;
+}
+
+/* Add Button */
+.btn-add {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-add:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Debt Section */
+.debt-entry {
+    margin-bottom: 1.5rem;
+}
+
+/* Add Button */
+.btn-add {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-add:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Completion Page Styles */
+.completion-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    background-color: #f4f6f8;
+    padding: 20px;
+}
+
+.result-card {
+    max-width: 600px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.result-card h1 {
+    font-size: 2em;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.result-stats p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #34495e;
+}
+
+.result-stats .highlight {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.analysis-message {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #555;
+}
+
+.btn-primary {
+    margin-top: 30px;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    color: #fff;
+    background-color: #28a745;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background-color: #333;
+    color: white;
+    font-size: 0.9em;
+}

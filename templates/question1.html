@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 1 - Personal Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header id="header" class="transparent">
+        <div class="header-container">
+            <!-- Logo -->
+            <img src="{{ url_for('static', filename='images/1Long_logo_white.png') }}" alt="1Long Logo" class="logo" id="logo">
+            <!-- Navigation -->
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/about" class="nav-link">About Us</a></li>
+                    <li><a href="/how-it-works" class="nav-link">How It Works</a></li>
+                </ul>
+            </nav>
+            <!-- Get Started Button -->
+            <a href="/question1" class="btn-get-started">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+        <section class="form-container">
+            <h1>Let's Get Started</h1>
+            <p>We need some information to create your personalized plan.</p>
+            <form action="/question2" method="POST">
+                <!-- Name -->
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+                <!-- Birthday -->
+                <label for="birthday">Birthday:</label>
+                <input type="date" id="birthday" name="birthday" required>
+
+                <!-- Email -->
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+                <!-- Phone -->
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn-submit">Next</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Debt-Free AI Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</body>
+
+</html>

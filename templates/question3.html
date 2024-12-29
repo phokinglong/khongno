@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 3 - Debt Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <header id="header" class="transparent">
+        <div class="header-container">
+            <img src="{{ url_for('static', filename='images/1Long_logo_white.png') }}" alt="1Long Logo" class="logo" id="logo">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/about" class="nav-link">About Us</a></li>
+                    <li><a href="/how-it-works" class="nav-link">How It Works</a></li>
+                </ul>
+            </nav>
+            <a href="/question1" class="btn-get-started">Get Started</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="form-container">
+            <h1>Debt Details</h1>
+            <p>Please provide your debt details.</p>
+            <form action="/completion" method="POST">
+
+                {% if income_data and income_data['income_amounts'] %}
+                {% for amount in income_data['income_amounts'] %}
+                <input type="hidden" name="income_amount[]" value="{{ amount }}">
+                {% endfor %}
+                {% endif %}
+                
+                <div id="debt-section">
+                    <div class="debt-entry">
+                        <label for="debt-amount-1">Debt Amount:</label>
+                        <input type="number" id="debt-amount-1" name="debt_amount[]" placeholder="Enter debt amount" required>
+
+                        <label for="debt-type-1">Debt Type:</label>
+                        <select id="debt-type-1" name="debt_type[]" required>
+                            <option value="" disabled selected>Select debt type</option>
+                            <option value="credit_card">Credit Card</option>
+                            <option value="mortgage">Mortgage</option>
+                            <option value="personal_loan">Personal Loan</option>
+                            <option value="student_loan">Student Loan</option>
+                            <option value="other">Other</option>
+                        </select>
+
+                        <label for="monthly-interest-1">Monthly Interest Payment:</label>
+                        <input type="number" id="monthly-interest-1" name="monthly_interest[]" placeholder="Enter interest payment" required>
+
+                        <label for="repayment-type-1">Repayment Type:</label>
+                        <select id="repayment-type-1" name="repayment_type[]" required>
+                            <option value="" disabled selected>Select repayment type</option>
+                            <option value="principal_only">Principal Only</option>
+                            <option value="principal_plus_interest">Principal + Interest</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="button" class="btn-add" onclick="addDebtEntry()">+ Add Another Debt</button>
+                <button type="submit" class="btn-submit">Finish</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Debt-Free AI Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</body>
+
+</html>

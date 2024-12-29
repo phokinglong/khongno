@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debt-Free AI Solutions</title>
+    <!-- Link to CSS using Flask's url_for -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <header id="header" class="transparent">
+        <div class="header-container">
+            <!-- Logo -->
+            <img src="{{ url_for('static', filename='images/1Long_logo_white.png') }}" alt="1Long Logo" class="logo" id="logo">
+
+            <!-- Navigation -->
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/about" class="nav-link">About Us</a></li>
+                    <li><a href="/how-it-works" class="nav-link">How It Works</a></li>
+                </ul>
+            </nav>
+
+            <!-- Get Started Button -->
+            <a href="/question1" class="btn-get-started">Get Started</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="overlay">
+                <h1>Get Rid of Your Debt Today<br>With Artificial Intelligence</h1>
+                <p>Join thousands of individuals and families who have achieved<br>financial freedom with our AI-powered debt-relief solutions.</p>
+                <a href="/question1" class="hero-cta">Start Your Journey</a>
+            </div>
+        </section>
+        <section class="content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur scelerisque...</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Debt-Free AI Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Link to JS using Flask's url_for -->
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</body>
+
+</html>

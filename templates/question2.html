@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 2 - Income Details</title>
+    <!-- Reference styles.css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header id="header" class="transparent">
+        <div class="header-container">
+            <!-- Logo -->
+            <img src="{{ url_for('static', filename='images/1Long_logo_white.png') }}" alt="1Long Logo" class="logo" id="logo">
+
+            <!-- Navigation -->
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/about" class="nav-link">About Us</a></li>
+                    <li><a href="/how-it-works" class="nav-link">How It Works</a></li>
+                </ul>
+            </nav>
+
+            <!-- Get Started Button -->
+            <a href="/question1" class="btn-get-started">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+        <section class="form-container">
+            <h1>Income Details</h1>
+            <p>Please provide information about your sources of income.</p>
+            <form action="/question3" method="POST">
+                
+                {% for amount in income_amounts %}
+                <input type="hidden" name="income_amount[]" value="{{ amount }}">
+                {% endfor %}
+                
+                <!-- Income Section -->
+                <div id="income-section">
+                    <div class="income-entry">
+                        <label for="income-type-1">Income Type:</label>
+                        <select id="income-type-1" name="income_type[]" required>
+                            <option value="" disabled selected>Select income type</option>
+                            <option value="salary">Salary</option>
+                            <option value="business">Business</option>
+                            <option value="investment">Investment</option>
+                            <option value="freelance">Freelance</option>
+                            <option value="other">Other</option>
+                        </select>
+
+                        <label for="income-amount-1">Income Amount:</label>
+                        <input type="number" id="income-amount-1" name="income_amount[]" placeholder="Enter amount" required>
+                    </div>
+                </div>
+                <button type="button" class="btn-add" onclick="addIncomeEntry()">+ Add Another Income Source</button>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn-submit">Next</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Debt-Free AI Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Reference script.js -->
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</body>
+
+</html>

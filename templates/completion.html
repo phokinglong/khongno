@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Completion</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header id="header" class="solid">
+        <div class="header-container">
+            <img src="{{ url_for('static', filename='images/1Long_logo_white.png') }}" alt="1Long Logo" class="logo" id="logo">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/about" class="nav-link">About Us</a></li>
+                    <li><a href="/how-it-works" class="nav-link">How It Works</a></li>
+                </ul>
+            </nav>
+            <a href="/question1" class="btn-get-started">Restart</a>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+        <section class="completion-container">
+            <div class="result-card">
+                <h1>🎉 Analysis Complete</h1>
+                <div class="result-stats">
+                    <p><strong>Total Income:</strong> <span class="highlight">{{ result['total_income'] }}</span></p>
+                    <p><strong>Total Debt:</strong> <span class="highlight">{{ result['total_debt'] }}</span></p>
+                </div>
+                <div class="analysis-message">
+                    <p><strong>Analysis:</strong> {{ result['status_message'] }}</p>
+                </div>
+                <a href="/" class="btn btn-primary">Start Over</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Debt-Free AI Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
